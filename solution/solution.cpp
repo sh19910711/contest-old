@@ -1,4 +1,4 @@
-// @snip <sh19910711/contest:solution/interface_solution.cpp>
+// @snip <sh19910711/contest:solution/interface.cpp>
 class Solution: public ISolution {
 public:
     int run() {
