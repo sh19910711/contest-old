@@ -18,8 +18,8 @@ public:
         edges.resize(num);
         vertex_weights.resize(num);
         edge_weights.resize(num);
-        fill( edges.begin(), edges.end(), VI() );
-        fill( edge_weights.begin(), edge_weights.end(), Weights( num ) );
+        std::fill( edges.begin(), edges.end(), VI() );
+        std::fill( edge_weights.begin(), edge_weights.end(), Weights( num ) );
         addVertices();
         addEdges();
     }
