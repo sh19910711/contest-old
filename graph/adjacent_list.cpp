@@ -5,24 +5,31 @@ public:
     typedef std::vector<VI> Edges;
     typedef std::vector<Weight> Weights;
     typedef std::vector<Weights> EdgeWeights;
+    typedef std::vector<VI> Matrix;
     typedef VI::iterator VertexIterator;
 
     Edges edges;
     EdgeWeights edge_weights;
     Weights vertex_weights;
+    Matrix edge_exists;
     int num;
-    
+
     void init( int n ) {
         num = n;
         edges.resize(num);
         vertex_weights.resize(num);
         edge_weights.resize(num);
+        edge_exists.resize(num);
         std::fill( edges.begin(), edges.end(), VI() );
-        std::fill( edge_weights.begin(), edge_weights.end(), Weights( num ) );
+        std::fill( edge_weights.begin(), edge_weights.end(), Weights( num, 0 ) );
+        std::fill( edge_exists.begin(), edge_exists.end(), VI( num, false ) );
         addVertices();
         addEdges();
     }
     void addEdge( int from, int to ) {
+        if ( edge_exists[from][to] )
+            return;
+        edge_exists[from][to] = true;
         edges[from].push_back(to);
     }
     void addEdge( int from, int to, Weight weight ) {
