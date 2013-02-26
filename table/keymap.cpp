@@ -1,5 +1,4 @@
-template <class Key, class Data>
-class KeyMappingTable {
+template <class Key, class Data> class KeyMappingTable {
 public:
     std::vector<Data> memory;
     void init( Key& limit ) {
