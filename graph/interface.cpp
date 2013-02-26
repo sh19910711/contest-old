@@ -1,3 +1,4 @@
+
 // @snip <sh19910711/contest:graph/config.cpp>
 class IGraph {
 public:

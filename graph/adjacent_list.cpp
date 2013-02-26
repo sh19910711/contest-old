@@ -1,3 +1,4 @@
+
 // @snip <sh19910711/contest:graph/interface.cpp>
 class AdjacentListGraph: public IGraph {
 public:
