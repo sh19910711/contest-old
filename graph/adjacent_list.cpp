@@ -22,9 +22,12 @@ public:
         addVertices();
         addEdges();
     }
-    void addEdge( int from, int to, Weight weight ) {
+    void addEdge( int from, int to ) {
         edges[from].push_back(to);
-        setCost( from, to, weight );
+    }
+    void addEdge( int from, int to, Weight weight ) {
+        addEdge( from, to );
+        setEdgeCost( from, to, weight );
     }
     int countVertices() {
         return num;
@@ -35,10 +38,10 @@ public:
     void setVertexCost( int from, Weight weight ) {
         vertex_weights[from] = weight;
     }
-    Weight getCost( int from, int to ) {
+    Weight getEdgeCost( int from, int to ) {
         return edge_weights[from][to];
     }
-    void setCost( int from, int to, Weight weight ) {
+    void setEdgeCost( int from, int to, Weight weight ) {
         edge_weights[from][to] = weight;
     }
     VertexIterator begin( int from ) {
