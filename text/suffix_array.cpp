@@ -59,4 +59,20 @@ public:
     int& operator []( int k ) {
         return sa[k];
     }
+
+    bool find( const std::string& key ) {
+        int lb = -1, ub = n;
+        while ( ub - lb > 1 ) {
+            int mid = ( lb + ub ) / 2;
+            std::string t = s.substr( sa[mid] );
+            if ( t.substr( 0, key.size() ) == key ) {
+                return true;
+            } else if ( t < key ) {
+                lb = mid;
+            } else {
+                ub = mid;
+            }
+        }
+        return false;
+    }
 };
