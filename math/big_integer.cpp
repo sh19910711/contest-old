@@ -3,7 +3,13 @@ public:
     char *digits;
     int size, capacity, sign;
 
-    BigInteger() {}
+    BigInteger() {
+        capacity = 128;
+        sign = 0;
+        digits = new char[capacity];
+        memset( digits, 0, capacity );
+        size = 0;
+    }
     BigInteger( int n, int cap ) {
         cap = std::max( cap, (int)sizeof(n) * 8 );
         capacity = cap, sign = sig(n), n *= sign, digits = new char[cap];
