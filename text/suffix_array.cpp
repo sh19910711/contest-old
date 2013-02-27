@@ -10,7 +10,7 @@ public:
         int maxlen = n;
         for ( int i = 0; i < n; ++ i ) {
             rank[i] = s[i];
-            maxlen = max( maxlen, s[i] + 1 );
+            maxlen = std::max( maxlen, s[i] + 1 );
         }
         VI cnt(maxlen, 0);
         for ( int i = 0; i < n; ++ i )
@@ -26,7 +26,7 @@ public:
             for ( int i = 1; i < n; ++ i ) {
                 int s1 = sa[i-1];
                 int s2 = sa[i];
-                rank[s2] = r[s1] == r[s2] && max( s1, s2 ) + k < n && r[s1+k/2] == r[s2+k/2] ? rank[s1] : i;
+                rank[s2] = r[s1] == r[s2] && std::max( s1, s2 ) + k < n && r[s1+k/2] == r[s2+k/2] ? rank[s1] : i;
             }
             for ( int i = 0; i < n; ++ i )
                 cnt[i] = i;
