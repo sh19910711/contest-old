@@ -31,6 +31,6 @@ public:
         bases = ( bases * b_inv ) % MOD;
         Q.pop_front();
     }
-    void init( string s ) { int n = s.size(); for ( int i = 0; i < n; ++ i ) pushBack(s[i]); }
+    void init( std::string s ) { int n = s.size(); for ( int i = 0; i < n; ++ i ) pushBack(s[i]); }
     long long getHash() { return hash; }
 };
