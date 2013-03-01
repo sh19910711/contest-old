@@ -6,6 +6,7 @@ public:
     int k;
     VI sa;
     VI rank;
+    VI height;
     void build() {
         int maxlen = n;
         for ( int i = 0; i < n; ++ i ) {
@@ -49,16 +50,12 @@ public:
         n = s.size();
         sa.resize(n);
         rank.resize(n+1);
+        height.resize(std::max(0,n-1));
     }
-    VI::iterator begin() {
-        return sa.begin();
-    }
-    VI::iterator end() {
-        return sa.end();
-    }
-    int& operator []( int k ) {
-        return sa[k];
-    }
+    VI::iterator begin() { return sa.begin(); }
+    VI::iterator end() { return sa.end(); }
+    int& operator []( int k ) { return sa[k]; }
+    int size() { return n; }
 
     bool find( const std::string& key ) {
         int lb = -1, ub = n;
@@ -74,5 +71,25 @@ public:
             }
         }
         return false;
+    }
+
+    int lcp( int x, int y ) {
+        int l = n - std::min( x, y );
+        for ( int i = 0; i < l; ++ i )
+            if ( s[x+i] != s[y+i] )
+                return i;
+        return l;
+    }
+
+    void buildHeight() {
+        int h = 0;
+        for ( int i = 0; i < n; ++ i ) {
+            int j = rank[i];
+            if ( j == n - 1 ) { h = 0; continue; }
+            int k = sa[j+1];
+            if ( h > 0 ) h = h - 1 + lcp( i + h - 1, k + h - 1 );
+            else h = lcp( i, k );
+            height[j] = h;
+        }
     }
 };
