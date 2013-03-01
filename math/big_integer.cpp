@@ -295,6 +295,7 @@ public:
 
     void operator/=( int n ) { divide(n); }
     void operator/=( BigInteger n ) { divide(n); }
+    BigInteger operator%( BigInteger n ) { BigInteger tmp(*this); return tmp.divide(n); }
     BigInteger operator%( int n ) { BigInteger tmp(*this); return tmp.divide(n); }
     void operator%=( int n ) { operator=(divide(n)); }
 
@@ -330,12 +331,8 @@ public:
         return tmp;
     }
 
-    BigInteger operator <<( int n ) {
-        BigInteger result(*this);
-        result <<= n;
-        return result;
-    }
-
+    BigInteger operator <<( int n ) { BigInteger result(*this); result <<= n; return result; }
+    BigInteger operator <<( BigInteger n ) { return operator <<( n.toInt() ); }
     void operator <<=( int n ) {
         if ( n < 0 ) {
             operator >>=( -n );
@@ -350,6 +347,7 @@ public:
     }
 
     BigInteger operator >>( int n ) { BigInteger result(*this); result >>= n; return result; }
+    BigInteger operator >>( BigInteger n ) { return operator >>( n.toInt() ); }
 
     void operator >>=( int n ) {
         if ( n < 0 ) {
@@ -365,20 +363,23 @@ public:
     }
 
     bool operator!() { return !size; }
-    operator bool() { return size; }
+    operator int() { return toInt(); }
+    operator bool() { std::cout << "this = " << (*this) << std::endl; return size != 0; }
     operator std::string() { return toString(); }
-    bool operator <( BigInteger n ) { return ( compare(n) < 0 );}
-    bool operator >( BigInteger n ) { return ( compare(n) > 0 ); }
-    bool operator ==( BigInteger n ) { return ( compare(n) == 0 ); }
-    bool operator <=( BigInteger n ) { return ( compare(n) <= 0 ); }
-    bool operator >=( BigInteger n ) { return ( compare(n) >= 0 ); }
-    bool operator <( int n ) { return ( compare(BigInteger(n)) < 0 ); }
-    bool operator >( int n ) { return ( compare(BigInteger(n)) > 0 ); }
-    bool operator ==( int n ) { return ( compare(BigInteger(n)) == 0 ); }
-    bool operator <=( int n ) { return ( compare(BigInteger(n)) <= 0 ); }
-    bool operator >=( int n ) { return ( compare(BigInteger(n)) >= 0 ); }
+    bool operator <( const BigInteger& n ) const { return ( compare(n) < 0 );}
+    bool operator >( const BigInteger& n ) const { return ( compare(n) > 0 ); }
+    bool operator ==( const BigInteger& n ) const { return ( compare(n) == 0 ); }
+    bool operator !=( const BigInteger& n ) const { return ( compare(n) != 0 ); }
+    bool operator <=( const BigInteger& n ) const { return ( compare(n) <= 0 ); }
+    bool operator >=( const BigInteger& n ) const { return ( compare(n) >= 0 ); }
+    bool operator <( const int& n ) const { return ( compare(BigInteger(n)) < 0 ); }
+    bool operator >( const int& n ) const { return ( compare(BigInteger(n)) > 0 ); }
+    bool operator ==( const int& n ) const { return ( compare(BigInteger(n)) == 0 ); }
+    bool operator !=( const int& n ) const { return ( compare(BigInteger(n)) != 0 ); }
+    bool operator <=( const int& n ) const { return ( compare(BigInteger(n)) <= 0 ); }
+    bool operator >=( const int& n ) const { return ( compare(BigInteger(n)) >= 0 ); }
 
-    int compare( BigInteger n ) {
+    int compare( const BigInteger& n ) const {
         if ( sign < n.sign ) return -1;
         if ( sign > n.sign ) return 1;
         if ( size < n.size ) return -sign;
@@ -390,3 +391,4 @@ public:
         return 0;
     }
 };
+
