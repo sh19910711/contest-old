@@ -4,7 +4,8 @@ public:
     static const int SIZE = 256;
     ValueType value;
     Trie *next[SIZE];
-    Trie() { std::fill( next, next+SIZE, (Trie*)NULL ); }
+    Trie() { clear(); }
+    void clear() { std::fill( next, next+SIZE, (Trie*)NULL ); }
     Trie& find( const std::string& s ) {
         Trie* res = this;
         for ( StringIterator it_i = s.begin(); it_i != s.end(); ++ it_i ) {
