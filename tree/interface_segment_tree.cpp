@@ -1,5 +1,5 @@
-class ISegmentTree {
+template <class T> class ISegmentTree {
 public:
     virtual void init( int n ) {}
-    virtual void update( int k, int a ) = 0;
+    virtual T update( int k, T a ) = 0;
 };
