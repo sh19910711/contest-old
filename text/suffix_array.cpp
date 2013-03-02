@@ -26,12 +26,8 @@ public:
             }
         }
     }
-    SuffixArray() {
-        init("");
-    }
-    SuffixArray( const std::string& s_ ) {
-        init(s_);
-    }
+    SuffixArray() { init(""); }
+    SuffixArray( const std::string& s_ ) { init(s_); }
     void init( const std::string& s_ ) {
         s = s_; n = s.size(); sa.resize(n); rank.resize(n+1);height.resize(std::max(0,n-1));
     }
@@ -58,9 +54,7 @@ public:
 
     int lcp( int x, int y ) {
         int l = n - std::min( x, y );
-        for ( int i = 0; i < l; ++ i )
-            if ( s[x+i] != s[y+i] )
-                return i;
+        for ( int i = 0; i < l; ++ i ) if ( s[x+i] != s[y+i] ) return i;
         return l;
     }
 
