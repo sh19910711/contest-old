@@ -35,9 +35,8 @@ public:
     VI::iterator end() { return sa.end(); }
     int& operator []( int k ) { return sa[k]; }
     int size() { return n; }
-
     bool find( const std::string& key ) {
-        int lb = -1, ub = n;
+        int lb = 0, ub = n;
         while ( ub - lb > 1 ) {
             int mid = ( lb + ub ) / 2;
             std::string t = s.substr( sa[mid] );
