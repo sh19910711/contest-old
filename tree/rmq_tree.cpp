@@ -1,5 +1,5 @@
 // @snip <sh19910711/contest:tree/interface_segment_tree.cpp>
-template <class T> class RMQTree: public ISegmentTree<T> {
+template <class T> class RMQTree: public tree::ISegmentTree<T> {
 public:
     T INF;
     int n;
