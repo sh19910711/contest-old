@@ -1,6 +1,8 @@
 // @snip <sh19910711/contest:solution/interface.cpp>
 class Solution: public ISolution {
 public:
+    bool input() {
+    }
     void solve() {
     }
     int run() {
