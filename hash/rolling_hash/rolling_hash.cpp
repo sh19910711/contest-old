@@ -1,5 +1,6 @@
 // @snip <sh19910711/contest:hash/rolling_hash/interface.cpp>
 // @snip <sh19910711/contest:math/mod_inverse.cpp>
+// ローリングハッシュの実装
 class RollingHash: public IRollingHash<long long> {
 public:
     typedef long long LL;
