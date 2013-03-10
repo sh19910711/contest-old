@@ -1,3 +1,4 @@
+// @desc 素集合データ構造
 class DisjointSets {
 public:
     std::vector<int> data;
