@@ -1,3 +1,5 @@
+// 与えられた文字列を右から左へ向かって回転させたとき
+// 辞書順で最小となるような回転回数を求める
 int CalcLexicographicallyMinimalRotation( const std::string& s ) {
     int n = s.size();
     int i = 0, j = 1, k = 0;

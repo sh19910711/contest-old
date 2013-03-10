@@ -1,3 +1,4 @@
+// SuffixArrayの実装
 class SuffixArray {
 public:
     typedef std::vector<int> VI;
