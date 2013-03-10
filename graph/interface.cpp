@@ -1,4 +1,5 @@
 // @snip <sh19910711/contest:graph/config.cpp>
+// グラフ: インターフェースクラス。各メソッドを拡張する形式で利用する。
 class IGraph {
 public:
     virtual void init( int n ) = 0;

@@ -1,4 +1,5 @@
 // @snip <sh19910711/contest:graph/interface.cpp>
+// グラフ: 隣接リスト
 class AdjacentListGraph: public IGraph {
 public:
     typedef std::vector<int> VI;

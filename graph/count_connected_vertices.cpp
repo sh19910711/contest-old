@@ -1,4 +1,5 @@
 // @snip <sh19910711/contest:graph/adjacent_list.cpp>
+// グラフ: 指定した頂点と接続している頂点の個数を求める
 int CountConnectedVertices( graph::AdjacentListGraph& graph, int start_vertex ) {
     int n = graph.num;
     bool used[n];

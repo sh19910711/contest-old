@@ -1,4 +1,5 @@
 // @snip <sh19910711/contest:graph/interface.cpp>
+// グラフ: 隣接行列を利用した実装
 class AdjacentMatrixGraph: public IGraph {
 public:
     typedef std::vector<int> VI;
