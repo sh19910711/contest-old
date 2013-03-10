@@ -1,4 +1,5 @@
 // @snip <sh19910711/contest:tree/interface_segment_tree.cpp>
+// RMQ Tree の実装
 template <class T> class RMQTree: public tree::ISegmentTree<T> {
 public:
     T INF;
