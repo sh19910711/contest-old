@@ -3,7 +3,7 @@ class Solution: public ISolution {
 public:
     int run() {
         int tests;
-        cin >> tests;
+        std::cin >> tests;
         for ( int i = 0; i < tests; ++ i ) {
             init();
             input();
