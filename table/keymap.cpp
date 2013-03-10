@@ -1,3 +1,4 @@
+// @desc Table[mapping(key)] = dataとなるテーブル
 template <class Key, class Data> class KeyMappingTable {
 public:
     std::vector<Data> memory;

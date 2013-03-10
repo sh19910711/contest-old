@@ -1,3 +1,4 @@
+// @desc トライ木の実装
 template <class ValueType> class Trie {
 public:
     typedef std::string::const_iterator StringIterator;
