@@ -1,3 +1,4 @@
+// @desc 2x2の行列を操作するクラス
 template <class T> class Matrix2x2 {
 public:
     T mat[2][2];

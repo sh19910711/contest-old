@@ -1,3 +1,4 @@
+// 多倍長整数の実装
 class BigInteger {
 public:
     char *digits;

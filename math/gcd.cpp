@@ -1,3 +1,4 @@
+// @desc 最大公約数を求める
 template <class T> T gcd( T a, T b ) {
     T i, j;
     for ( i = 0; ! ( a & 1 ); ++ i ) a >>= 1;

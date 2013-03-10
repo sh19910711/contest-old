@@ -1,3 +1,4 @@
+// @desc 最小公倍数を求める
 template <class T> T lcm( T a, T b ) {
     T larger = a > b ? a : b;
     T smaller = a > b ? b : a;
