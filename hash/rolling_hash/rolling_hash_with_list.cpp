@@ -1,3 +1,4 @@
+// @snip <sh19910711/contest:hash/rolling_hash/interface.cpp>
 // LIFOなローリングハッシュの実装, unsigned long longの溢れを利用
 class RollingHash: public hash::rolling_hash::IRollingHash<unsigned long long> {
 public:
