@@ -2,8 +2,18 @@ class Date {
 public:
     int getYear() { return yy; }
     int getMonth() { return mm; }
-    int getDay() { return dd; }
-    void init( int yy_, int mm_, int dd_ ) { yy = yy_, mm = mm_, dd = dd_; }
+    int getDate() { return dd; }
+    int getDay() {
+        int y = yy, m = mm;
+        if ( mm <= 2 ) y -= 1, m += 12;
+        int k = y % 100, j = y / 100;
+        return ( dd + 13*(m+1)/5 + k + k/4 + j/4 + 5*j + 5 ) % 7;
+    }
+    static std::string getDayString( const int& day ) {
+        const std::string T[7] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+        return T[day];
+    }
+    void init( const int& yy_, const int& mm_, const int& dd_ ) { yy = yy_, mm = mm_, dd = dd_; }
     static bool isLeapYear( int y ) { return y % 100 == 0 ? y % 400 == 0 : y % 4 == 0; }
     virtual std::string toString() {
         std::ostringstream oss;
