@@ -2,6 +2,7 @@
 // @snip <sh19910711/contest:solution/typedef.cpp>
 class Solution: public ISolution {
 public:
+
     int run() {
         int tests;
         std::cin >> tests;
@@ -13,5 +14,6 @@ public:
         }
         return 0;
     }
+
 };
 
