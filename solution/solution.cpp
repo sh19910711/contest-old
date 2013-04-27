@@ -1,5 +1,5 @@
-// @snip <sh19910711/contest:solution/interface.cpp>
 // @snip <sh19910711/contest:solution/typedef.cpp>
+// @snip <sh19910711/contest:solution/interface.cpp>
 using namespace std;
 
 class Solution: public ISolution {
