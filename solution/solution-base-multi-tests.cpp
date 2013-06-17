@@ -5,7 +5,7 @@ public:
     int tests = 0;
     std::cin >> tests;
     for ( int i = 0; i < tests; ++ i )
-      action();
+      action(i);
     return 0;
   }
 
