@@ -10,9 +10,12 @@ protected:
     init();
     if ( ! input() )
       return false;
-    solve();
+    solver.solve();
     output();
     return true;
   }
+
 private:
+  Solver solver;
+
 };

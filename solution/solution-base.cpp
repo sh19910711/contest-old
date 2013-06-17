@@ -5,4 +5,5 @@ public:
     while ( action() );
     return 0;
   }
+
 };

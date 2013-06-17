@@ -2,10 +2,11 @@
 class SolutionBase: public ISolution {
 public:
   virtual int run() {
-    int tests;
+    int tests = 0;
     std::cin >> tests;
     for ( int i = 0; i < tests; ++ i )
       action();
     return 0;
   }
+
 };
