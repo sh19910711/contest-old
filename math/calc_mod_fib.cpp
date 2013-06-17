@@ -1,6 +1,5 @@
 // @snip<sh19910711/contest:math/matrix_2x2.cpp>
-// @desc n番目のフィボナッチ数を求める
-template <class T, class U> T CalcFib( U n ) {
+template <class T> T CalcFib( T n, T mod ) {
     if ( n == 0 ) return 0;
     if ( n == 1 ) return 1;
     Matrix2x2<T> mat( 1, 1, 1, 0 );
