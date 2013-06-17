@@ -6,7 +6,7 @@
 class Solution: public SolutionBase {
 public:
 protected:
-  virtual bool action( int test_no ) {
+  virtual bool action() {
     init();
     if ( ! input() )
       return false;
