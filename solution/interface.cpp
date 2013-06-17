@@ -1,7 +1,9 @@
 class ISolution {
 public:
-    virtual void init() {};
-    virtual bool input() { return false; };
-    virtual void output() {};
-    virtual int run() = 0;
+  virtual int run() = 0;
+protected:
+  virtual bool action() = 0;
+  virtual void init() {};
+  virtual bool input() { return false; };
+  virtual void output() {};
 };
