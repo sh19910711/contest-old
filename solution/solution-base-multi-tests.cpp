@@ -1,5 +1,5 @@
 // @snip <sh19910711/contest:solution/interface.cpp>
-class SolutionBase: public ISolution {
+class SolutionBase: public SolutionInterface {
 public:
   virtual int run() {
     int tests = 0;
