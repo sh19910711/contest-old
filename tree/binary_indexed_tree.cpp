@@ -10,7 +10,7 @@ public:
 
   T sum( int i ) {
     i ++;
-    int res = 0;
+    T res = 0;
     while ( i > 0 ) { res += data[i]; i -= i & -i; }
     return res;
   }
