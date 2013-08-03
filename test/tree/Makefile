@@ -1,5 +1,5 @@
 
-DIRS=./breadth_first_search
+DIRS=./binary_indexed_tree
 
 all:
 	for dir in $(DIRS); do \

@@ -1,19 +1,19 @@
 
-DIRS = ./search
+DIRS = ./search ./tree
 
 all:
 	for dir in $(DIRS); do \
-		cd $$dir && make ; \
+		cd $$dir && make && cd - ; \
 	done
 
 clean:
 	for dir in $(DIRS); do \
-		cd $$dir && make clean ; \
+		cd $$dir && make clean && cd - ; \
 	done
 
 test:
 	for dir in $(DIRS); do \
-		cd $$dir && make test ; \
+		cd $$dir && make test && cd - ; \
 	done
 
 
