@@ -1,0 +1,6 @@
+CPPFLAGS = -I$(HOME)/local/src/google-test/include -lpthread -fprofile-arcs -ftest-coverage
+LDFLAGS += -fprofile-arcs
+LIBGTEST=$(HOME)/local/lib/libgtest.a
+LIBGTEST_MAIN=$(HOME)/local/lib/libgtest_main.a
+GTESTFLAGS=--gtest_output=xml:test_result.xml
+GCOVRFLAGS=--xml --output=gcovr_result.xml ./
