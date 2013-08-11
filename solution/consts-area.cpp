@@ -1,4 +1,2 @@
 // constant vars
 
-// storages
-
