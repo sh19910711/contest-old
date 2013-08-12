@@ -1,7 +1,7 @@
 
 namespace solution {
-  std::istream* is = &std::cin;
-  std::ostream* os = &std::cout;
+  std::istream* istream_pointer = &std::cin;
+  std::ostream* ostream_pointer = &std::cout;
 }
 
 // @snippet<sh19910711/contest:solution/interface.cpp>
@@ -180,14 +180,14 @@ namespace solution {
     
     bool input_nk() {
       string line;
-      getline(*is, line);
+      getline(*istream_pointer, line);
       ISS iss(line);
       return iss >> n >> K;
     }
     
     bool input_t() {
       string line;
-      getline(*is, line);
+      getline(*istream_pointer, line);
       ISS iss(line);
       for ( int i = 0; i < n; ++ i )
         iss >> T[i];
@@ -197,7 +197,7 @@ namespace solution {
     bool input_e() {
       for ( int i = 0; i < n; ++ i ) {
         string line;
-        getline(*is, line);
+        getline(*istream_pointer, line);
         ISS iss(line);
         int floor_id;
         while ( iss >> floor_id )
@@ -216,9 +216,9 @@ namespace solution {
     
     void output() {
       if ( result == INF ) {
-        *os << IMPOSSIBLE << endl;
+        *ostream_pointer << IMPOSSIBLE << endl;
       } else {
-        *os << result << endl;
+        *ostream_pointer << result << endl;
       }
     }
     

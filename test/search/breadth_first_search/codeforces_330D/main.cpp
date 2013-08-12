@@ -48,8 +48,8 @@ namespace solution {
 namespace solution {
   // namespaces, types
   using namespace std;
-  istream* is = &std::cin;
-  ostream* os = &std::cout;
+  istream* istream_pointer = &std::cin;
+  ostream* ostream_pointer = &std::cout;
 }
 
 // @snippet<sh19910711/contest:solution/variables-area.cpp>
@@ -200,16 +200,16 @@ namespace solution {
     }
     
     bool input() {
-      if ( ! ( (*is) >> H >> W ) )
+      if ( ! ( (*istream_pointer) >> H >> W ) )
         return false;
       for ( int i = 0; i < H; ++ i ) {
-        (*is) >> S[i];
+        (*istream_pointer) >> S[i];
       }
       return true;
     }
     
     void output() {
-      (*os) << result << endl;
+      (*ostream_pointer) << result << endl;
     }
     
   private:

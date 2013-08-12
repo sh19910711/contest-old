@@ -45,8 +45,8 @@
       { \
         ifstream ifs(input_name); \
         ofstream ofs(output_name); \
-        NAMESPACE::solution::is = &ifs; \
-        NAMESPACE::solution::os = &ofs; \
+        NAMESPACE::solution::istream_pointer = &ifs; \
+        NAMESPACE::solution::ostream_pointer = &ofs; \
         NAMESPACE::solution::Solution sol; \
         sol.run(); \
       } \

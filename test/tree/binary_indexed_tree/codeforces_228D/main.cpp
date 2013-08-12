@@ -48,8 +48,8 @@ namespace solution {
 namespace solution {
   // namespaces, types
   using namespace std;
-  istream* is = &std::cin;
-  ostream* os = &std::cout;
+  std::istream* istream_pointer = &std::cin;
+  std::ostream* ostream_pointer = &std::cout;
   typedef tree::BinaryIndexedTree<LL> BIT;
 }
 
@@ -167,18 +167,18 @@ namespace solution {
     }
     
     bool input() {
-      if ( ! ( *is >> n ) )
+      if ( ! ( *istream_pointer >> n ) )
         return false;
       for ( int i = 1; i <= n; ++ i ) {
-        *is >> A[i];
+        *istream_pointer >> A[i];
       }
-      *is >> m;
+      *istream_pointer >> m;
       for ( int i = 0; i < m; ++ i ) {
-        *is >> T[i];
+        *istream_pointer >> T[i];
         if ( T[i] == QUERY_A ) {
-          *is >> X[i] >> Y[i];
+          *istream_pointer >> X[i] >> Y[i];
         } else if ( T[i] == QUERY_B ) {
-          *is >> X[i] >> Y[i] >> Z[i];
+          *istream_pointer >> X[i] >> Y[i] >> Z[i];
         }
       }
       return true;
@@ -187,7 +187,7 @@ namespace solution {
     void output() {
       for ( int i = 0; i < m; ++ i ) {
         if ( query_result[i] != NONE ) {
-          *os << query_result[i] << endl;
+          *ostream_pointer << query_result[i] << endl;
         }
       }
     }
