@@ -2,4 +2,4 @@ language: cpp
 compiler:
   - g++
   - clang
-script: cd ./test && make && make test && make clean
+script: cd ./test && make && make test-only && make clean
