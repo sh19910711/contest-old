@@ -1,5 +1,5 @@
 language: cpp
 compiler:
-  - gcc
+  - g++
   - clang
-script: cd ./test && make
+script: cd ./test && make && make test && make clean
