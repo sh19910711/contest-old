@@ -1,4 +1,4 @@
-CPPFLAGS=-I$(GOOGLETEST_DIR)/include -I$(GOOGLETEST_DIR) -fprofile-arcs -ftest-coverage
+CPPFLAGS=-I$(GOOGLETEST_DIR)/include -I$(GOOGLETEST_DIR) -I$(ROOT_DIR)/_lib -fprofile-arcs -ftest-coverage
 CPPFLAGS_AFTER=-lpthread
 LDFLAGS+=-fprofile-arcs
 LIBGTEST=$(GOOGLETEST_DIR)/src/gtest-all.cc
