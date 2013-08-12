@@ -3,9 +3,9 @@
 #include <gtest/gtest.h>
 
 #include "test_headers.h"
-#include "../../../math/mod_pow.cpp"
+#include "../math.h"
 #include "define_test.h"
 
 #include "./uva_374/test_cases.h"
-
-
+#include "./uva_1230/test_cases.h"
+#include "./codeforces_227C/test_cases.h"
