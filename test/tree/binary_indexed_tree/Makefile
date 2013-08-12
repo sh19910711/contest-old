@@ -1,7 +1,7 @@
 include ../../Makefile.in
 
 all: main.cpp
-	$(CXX) $(CPPFLAGS) -o main.exe main.cpp $(LIBGTEST) $(LIBGTEST_MAIN)
+	$(CXX) $(CPPFLAGS) -o main.exe main.cpp $(LIBGTEST) $(LIBGTEST_MAIN) $(CPPFLAGS_AFTER)
 
 clean:
 	rm -f main.exe
