@@ -1,9 +1,9 @@
 language: cpp
 compiler:
+  - clang
   - g++
   - g++-4.7
   - g++-4.8
-  - clang
 script:
   - cd ./test
   - make
