@@ -1,9 +1,10 @@
 
+GOOGLETEST_DIR=$(CURDIR)/googletest
 DIRS = ./search ./tree
 
 all:
 	for dir in $(DIRS); do \
-		cd $$dir && make && cd - ; \
+		cd $$dir && make GOOGLETEST_DIR=$(GOOGLETEST_DIR) && cd - ; \
 	done
 
 clean:
