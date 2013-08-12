@@ -13,4 +13,6 @@ test:
 	./main.exe $(GTESTFLAGS) 
 	gcovr $(GCOVRFLAGS) 
 
+test-only:
+	./main.exe $(GTESTFLAGS) 
 

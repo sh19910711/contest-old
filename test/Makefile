@@ -17,4 +17,8 @@ test:
 		cd $$dir && make test && cd - ; \
 	done
 
+test-only:
+	for dir in $(DIRS); do \
+		cd $$dir && make test-only && cd - ; \
+	done
 
