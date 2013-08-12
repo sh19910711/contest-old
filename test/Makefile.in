@@ -5,3 +5,19 @@ LIBGTEST=$(GOOGLETEST_DIR)/src/gtest-all.cc
 LIBGTEST_MAIN=$(GOOGLETEST_DIR)/src/gtest_main.cc
 GTESTFLAGS=--gtest_output=xml:test_result.xml
 GCOVRFLAGS=--xml --output=gcovr_result.xml ./
+TEST_MAIN_CPP=main.cpp
+TEST_MAIN_OUT=main.exe
+CLEAN_FILES=$(TEST_MAIN_OUT) *.gcda *.gcov *.gcno
+
+all: $(TEST_MAIN_CPP)
+	$(CXX) $(CPPFLAGS) -o $(TEST_MAIN_OUT) $(TEST_MAIN_CPP) $(LIBGTEST) $(LIBGTEST_MAIN) $(CPPFLAGS_AFTER)
+
+clean:
+	rm -f $(CLEAN_FILES)
+
+test:
+	./main.exe $(GTESTFLAGS) 
+	gcovr $(GCOVRFLAGS) 
+
+test-only:
+	./main.exe $(GTESTFLAGS) 
