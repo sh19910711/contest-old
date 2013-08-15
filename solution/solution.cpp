@@ -1,5 +1,6 @@
 // @snip <sh19910711/contest:solution/solution-base.cpp>
 // @snip <sh19910711/contest:storage/vector.cpp>
+// @snip <sh19910711/contest:storage/vector_types.cpp>
 // @snip <sh19910711/contest:solution/typedef.cpp>
 // @snip <sh19910711/contest:solution/namespace-area.cpp>
 // @snip <sh19910711/contest:solution/consts-area.cpp>
