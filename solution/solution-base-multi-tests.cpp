@@ -4,8 +4,9 @@ public:
   virtual int run() {
     int tests = 0;
     std::cin >> tests;
-    for ( int i = 0; i < tests; ++ i )
-      action();
+    for ( int i = 0; i < tests; ++ i ) {
+      this->action();
+    }
     return 0;
   }
 

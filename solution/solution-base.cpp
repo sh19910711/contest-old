@@ -2,8 +2,8 @@
 class SolutionBase: public SolutionInterface {
 public:
   virtual int run() {
-    pre_calc();
-    while ( action() );
+    this->pre_calc();
+    while ( this->action() );
     return 0;
   }
 

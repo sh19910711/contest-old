@@ -10,16 +10,13 @@ class Solution: public SolutionBase {
 public:
 protected:
   virtual bool action() {
-    init();
-    if ( ! input() )
+    this->init();
+    if ( ! this->input() )
       return false;
     solver.solve();
-    output();
+    this->output();
     return true;
   }
 
   Solver solver;
-
-private:
-
 };
