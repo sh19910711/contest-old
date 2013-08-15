@@ -1,7 +1,7 @@
-template <typename ValueType, int SIZE> class Vector {
+template <typename ValueType, int SIZE> class VectorClass {
 public:
   typedef ValueType Type;
-  Vector() { data.resize(SIZE); }
+  VectorClass() { data.resize(SIZE); }
   Type& operator [] ( const int& index ) { return data[index]; }
   const Type& operator [] ( const int& index ) const { return data[index]; }
 private:

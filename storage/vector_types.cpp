@@ -1,10 +1,13 @@
-template <typename Type, int SIZE_X = 0, int SIZE_Y = 0, int SIZE_Z = 0> struct VectorTypes {
-  typedef storage::Vector<Type   , SIZE_X> Type1D;
-  typedef storage::Vector<Type1D , SIZE_Y> Type2D;
-  typedef storage::Vector<Type2D , SIZE_Z> Type3D;
+const int VECTOR_NONE = -1;
+template <typename ValueType, int SIZE_X = VECTOR_NONE, int SIZE_Y = VECTOR_NONE, int SIZE_Z = VECTOR_NONE> struct Vector {
+  typedef storage::VectorClass<ValueType, SIZE_X> Type__;
+  typedef storage::VectorClass<Type__, SIZE_Y> Type_;
+  typedef storage::VectorClass<Type_, SIZE_Z> Type;
 };
-template <int SIZE_X = 0, int SIZE_Y = 0, int SIZE_Z = 0> struct BasicVectors {
-  typedef VectorTypes<Int    , SIZE_X , SIZE_Y , SIZE_Z> IntVectors;
-  typedef VectorTypes<Double , SIZE_X , SIZE_Y , SIZE_Z> DoubleVectors;
-  typedef VectorTypes<String , SIZE_X , SIZE_Y , SIZE_Z> StringVectors;
+template <typename ValueType, int SIZE_X, int SIZE_Y> struct Vector<ValueType, SIZE_X, SIZE_Y, VECTOR_NONE> {
+  typedef storage::VectorClass<ValueType, SIZE_X> Type_;
+  typedef storage::VectorClass<Type_, SIZE_X> Type;
+};
+template <typename ValueType, int SIZE_X> struct Vector<ValueType, SIZE_X, VECTOR_NONE, VECTOR_NONE> {
+  typedef storage::VectorClass<ValueType, SIZE_X> Type;
 };
