@@ -1,6 +1,6 @@
 
 GOOGLETEST_DIR=$(CURDIR)/googletest
-DIRS = ./search ./tree ./math
+DIRS = ./search ./tree ./math ./graph ./setlib
 
 all:
 	for dir in $(DIRS); do \
