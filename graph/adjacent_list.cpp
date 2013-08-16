@@ -1,3 +1,4 @@
+// @snip <sh19910711/contest:misc/smart_pointer.cpp>
 // @snip <sh19910711/contest:graph/interface.cpp>
 template <typename WeightType, typename EdgeType> class AdjacentList: public GraphInterface<WeightType, EdgeType> {
 public:
