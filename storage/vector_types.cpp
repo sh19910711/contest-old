@@ -1,3 +1,4 @@
+// @snip <sh19910711/contest:storage/vector.cpp>
 const int VECTOR_NONE = -1;
 template <typename ValueType, int SIZE_X = VECTOR_NONE, int SIZE_Y = VECTOR_NONE, int SIZE_Z = VECTOR_NONE> struct Vector {
   typedef storage::VectorClass<ValueType, SIZE_X> Type__;
