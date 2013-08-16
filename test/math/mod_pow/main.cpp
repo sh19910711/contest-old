@@ -9,3 +9,4 @@
 #include "./uva_374/test_cases.h"
 #include "./uva_1230/test_cases.h"
 #include "./codeforces_227C/test_cases.h"
+#include "./codeforces_337C/test_cases.h"
