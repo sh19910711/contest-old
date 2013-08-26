@@ -6,7 +6,7 @@ public:
     this->pre_calc();
     for (;;) {
       this->before_action(-1);
-      this->action();
+      if ( ! this->action() ) { this->after_action(-1); break; }
       this->after_action(-1);
     };
     return 0;
