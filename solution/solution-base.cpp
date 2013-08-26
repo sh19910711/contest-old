@@ -4,7 +4,7 @@ public:
   virtual ~SolutionBase() {}
   virtual int run() {
     this->pre_calc();
-    while () {
+    for (;;) {
       this->before_action(-1);
       this->action();
       this->after_action(-1);
