@@ -1,6 +1,7 @@
 // @snip <sh19910711/contest:solution/interface.cpp>
 class SolutionBase: public SolutionInterface {
 public:
+  virtual ~SolutionBase() {}
   virtual int run() {
     int tests = 0;
     std::cin >> tests;
@@ -9,5 +10,6 @@ public:
     }
     return 0;
   }
-
+protected:
+  SolutionBase() {}
 };
