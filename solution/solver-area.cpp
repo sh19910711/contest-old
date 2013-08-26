@@ -1,6 +1,6 @@
 class Solver {
 public:
-  void solve() {
+  void solve( Storages& s ) {
   }
 protected:
 

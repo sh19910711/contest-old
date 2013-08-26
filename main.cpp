@@ -3,6 +3,6 @@
 #ifndef __MY_UNIT_TEST__
 int main() {
   std::cin.sync_with_stdio(false);
-  return solution::Solution().run();
+  return solution::Solution(&solution::global_storages).run();
 }
 #endif
