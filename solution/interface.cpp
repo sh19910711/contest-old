@@ -10,4 +10,6 @@ protected:
   virtual void init() {};
   virtual bool input( Storages& s ) { return false; };
   virtual void output( const Storages& s ) const {};
+  virtual void before_action( const int& test_no ) const {}
+  virtual void after_action( const int& test_no ) const {}
 };

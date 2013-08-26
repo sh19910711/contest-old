@@ -4,7 +4,11 @@ public:
   virtual ~SolutionBase() {}
   virtual int run() {
     this->pre_calc();
-    while ( this->action() );
+    while () {
+      this->before_action(-1);
+      this->action();
+      this->after_action(-1);
+    };
     return 0;
   }
 protected:

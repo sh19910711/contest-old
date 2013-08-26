@@ -6,7 +6,9 @@ public:
     int tests = 0;
     std::cin >> tests;
     for ( int i = 0; i < tests; ++ i ) {
+      this->before_action(i);
       this->action();
+      this->after_action(i);
     }
     return 0;
   }
