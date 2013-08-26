@@ -20,6 +20,8 @@ public:
   }
   Type& operator *() { return *pointer; }
   const Type& operator *() const { return *pointer; }
+  Type* operator +( const int& x ) { return pointer + x; }
+  const Type* operator +( const int& x ) const { return pointer + x; }
   Type* operator ->() { return pointer; }
   SmartPointer<Type>& operator = ( const SmartPointer<Type>& sp ) {
     if ( this != &sp ) {
