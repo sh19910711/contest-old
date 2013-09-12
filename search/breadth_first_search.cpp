@@ -14,7 +14,10 @@ protected:
   }
 
   void push_next_node( const Node& node ) {
+    if ( this->is_visited_node(node) )
+      return;
     Q.push(node);
+    this->set_visited(node);
   }
 
 protected:

@@ -96,7 +96,6 @@ namespace solution {
         }
       }
       Node start_node(goal_r, goal_c, 0);
-      set_visited(start_node);
       push_next_node(start_node);
     }
     
@@ -110,9 +109,6 @@ namespace solution {
         if ( S[nr][nc] == WALL_CELL )
           continue;
         Node next_node(nr, nc, nsteps);
-        if ( is_visited_node(next_node) )
-          continue;
-        set_visited(next_node);
         push_next_node(next_node);
       }
     }
