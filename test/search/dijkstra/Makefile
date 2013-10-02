@@ -1,1 +1,1 @@
-include ../../Makefile.in
+include $(ROOT_DIR)/Makefile.in

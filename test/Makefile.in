@@ -9,15 +9,17 @@ TEST_MAIN_CPP=main.cpp
 TEST_MAIN_OUT=main.exe
 CLEAN_FILES=$(TEST_MAIN_OUT) *.gcda *.gcov *.gcno
 
-all: $(TEST_MAIN_CPP)
+all: $(TEST_MAIN_OUT)
+
+$(TEST_MAIN_OUT): **/*.cpp
 	$(CXX) $(CPPFLAGS) -o $(TEST_MAIN_OUT) $(TEST_MAIN_CPP) $(LIBGTEST) $(LIBGTEST_MAIN) $(CPPFLAGS_AFTER)
 
 clean:
 	rm -f $(CLEAN_FILES)
 
-test:
-	./main.exe $(GTESTFLAGS) 
-	gcovr $(GCOVRFLAGS) 
+test: $(TEST_MAIN_OUT)
+	./$(TEST_MAIN_OUT) $(GTESTFLAGS) || exit 1
+	gcovr $(GCOVRFLAGS)
 
-test-only:
-	./main.exe $(GTESTFLAGS) 
+test-only: $(TEST_MAIN_OUT)
+	./$(TEST_MAIN_OUT) $(GTESTFLAGS) 

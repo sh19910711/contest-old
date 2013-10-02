@@ -1,21 +1,8 @@
+DIRS = $(sort $(shell find . -maxdepth 2 -mindepth 2 -name Makefile | xargs -I $$ dirname $$))
 
-all:
-	for dir in $(DIRS); do \
-		cd $$dir && make && cd - ; \
-	done
+default: all
 
-clean:
-	for dir in $(DIRS); do \
-		cd $$dir && make clean && cd - ; \
-	done
+$(DIRS)::
+	$(MAKE) -C $@ $(MAKECMDGOALS)
 
-test:
-	for dir in $(DIRS); do \
-		cd $$dir && make test && cd - ; \
-	done
-
-test-only:
-	for dir in $(DIRS); do \
-		cd $$dir && make test-only && cd - ; \
-	done
-
+all clean test test-only: $(DIRS)
