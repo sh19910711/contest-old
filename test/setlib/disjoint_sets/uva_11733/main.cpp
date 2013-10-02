@@ -275,7 +275,7 @@ namespace solution {
     }
     
     Result calc_result( const Int& num_vertices, const Edges& edges, const Int& A ) {
-      Int cost = 0;
+      Int cost = 1;
       Int airports = 0;
       UnionFind uf(num_vertices);
       for ( Edges::const_iterator it_i = edges.begin(); it_i != edges.end(); ++ it_i ) {
