@@ -1,1 +1,1 @@
-include ../Makefile.nest.in
+include $(ROOT_DIR)/Makefile.nest.in
