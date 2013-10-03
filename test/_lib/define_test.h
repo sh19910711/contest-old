@@ -60,3 +60,33 @@
       } \
     } \
   } 
+
+#define DEFINE_INPUT_TEST_20131003(CATEGORY, NAMESPACE, TEST_NO) \
+  namespace test_NAMESPACE { \
+    using namespace std; \
+    TEST(CATEGORY, NAMESPACE ## _ ## TEST_NO) { \
+      char input_name[256]; \
+      char output_name[256]; \
+      char expect_name[256]; \
+      sprintf(input_name, #NAMESPACE "/input." #TEST_NO ".txt"); \
+      sprintf(output_name, #NAMESPACE "/output." #TEST_NO ".txt"); \
+      sprintf(expect_name, #NAMESPACE "/expected." #TEST_NO ".txt"); \
+      { \
+        ifstream ifs(input_name); \
+        ofstream ofs(output_name); \
+        NAMESPACE::solution::istream_pointer = &ifs; \
+        NAMESPACE::solution::ostream_pointer = &ofs; \
+        NAMESPACE::solution::Solution sol(&NAMESPACE::solution::global_storages); \
+        sol.run(); \
+      } \
+      { \
+        ifstream ifs_output(output_name); \
+        ifstream ifs_expect(expect_name); \
+        string output, expect; \
+        while ( ifs_expect >> expect ) { \
+          ifs_output >> output; \
+          EXPECT_EQ(expect, output); \
+        } \
+      } \
+    } \
+  } 
