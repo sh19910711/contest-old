@@ -18,8 +18,8 @@ clean:
 	rm -f $(CLEAN_FILES)
 
 test: $(TEST_MAIN_OUT)
-	./$(TEST_MAIN_OUT) $(GTESTFLAGS) || exit 1
+	./$(TEST_MAIN_OUT) $(GTESTFLAGS)
+
+cov:
 	gcovr $(GCOVRFLAGS)
 
-test-only: $(TEST_MAIN_OUT)
-	./$(TEST_MAIN_OUT) $(GTESTFLAGS) 

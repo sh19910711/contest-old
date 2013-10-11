@@ -5,5 +5,5 @@ compiler:
 script:
   - cd ./test
   - make
-  - make test-only
+  - make test
   - make clean

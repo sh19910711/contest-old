@@ -5,4 +5,4 @@ default: all
 $(DIRS)::
 	$(MAKE) -C $@ $(MAKECMDGOALS)
 
-all clean test test-only: $(DIRS)
+all clean test test-only cov: $(DIRS)
