@@ -1,1 +1,2 @@
 export ROOT_DIR=`pwd`
+export GOOGLETEST_DIR=$ROOT_DIR/_googletest
