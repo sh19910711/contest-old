@@ -1,4 +1,4 @@
-DIRS = $(sort $(shell find . -maxdepth 2 -mindepth 2 -name Makefile | xargs -I $$ dirname $$))
+DIRS = $(sort $(shell find . -maxdepth 2 -mindepth 2 -name Makefile | grep -ve '$^_' | xargs -I $$ dirname $$))
 
 default: all
 
