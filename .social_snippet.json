@@ -1,0 +1,6 @@
+{
+  "name": "contest",
+  "version": "0.0.0",
+  "language": "C++",
+  "source": "./source"
+}
