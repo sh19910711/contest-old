@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 
 #include "test_headers.h"
-#include "./binary_indexed_tree.h"
+#include "../tree.h"
 #include "define_test.h"
 
 #include "./codeforces_228D/test_cases.h"

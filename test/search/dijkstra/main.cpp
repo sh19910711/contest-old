@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 #include "test_headers.h"
-#include "./dijkstra.h"
+#include "../search.h"
 #include "define_test.h"
 
 #include "./uva_10801/test_cases.h"
