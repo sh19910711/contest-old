@@ -1,24 +1,32 @@
-CPPFLAGS=-I$(GOOGLETEST_DIR)/include -I$(GOOGLETEST_DIR) -I$(ROOT_DIR)/../source -I$(ROOT_DIR)/_lib # -fprofile-arcs -ftest-coverage
+CPPFLAGS=-I$(GOOGLETEST_DIR)/include -I$(GOOGLETEST_DIR) -I$(ROOT_DIR)/../source -I$(ROOT_DIR)/_lib
+CPPFLAGS_COV=-I$(GOOGLETEST_DIR)/include -I$(GOOGLETEST_DIR) -I$(ROOT_DIR)/../source -I$(ROOT_DIR)/_lib -fprofile-arcs -ftest-coverage
 CPPFLAGS_AFTER=-lpthread
-LDFLAGS+=# -fprofile-arcs
+LDFLAGS+=
 LIBGTEST=$(GOOGLETEST_DIR)/src/gtest-all.cc
 LIBGTEST_MAIN=$(GOOGLETEST_DIR)/src/gtest_main.cc
 GTESTFLAGS=--gtest_output=xml:test_result.xml
 GCOVRFLAGS=--xml --output=gcovr_result.xml ./
 TEST_MAIN_CPP=main.cpp
 TEST_MAIN_OUT=main.exe
-CLEAN_FILES=$(TEST_MAIN_OUT) *.gcda *.gcov *.gcno
+TEST_MAIN_OUT_COV=main-cov.exe
+CLEAN_FILES=$(TEST_MAIN_OUT) $(TEST_MAIN_OUT_COV) *.gcda *.gcov *.gcno
 
 all: $(TEST_MAIN_OUT)
 
 $(TEST_MAIN_OUT): **/*.cpp
 	$(CXX) $(CPPFLAGS) -o $(TEST_MAIN_OUT) $(TEST_MAIN_CPP) $(LIBGTEST) $(LIBGTEST_MAIN) $(CPPFLAGS_AFTER)
 
+$(TEST_MAIN_OUT_COV): **/*.cpp
+	$(CXX) $(CPPFLAGS_COV) -o $(TEST_MAIN_OUT_COV) $(TEST_MAIN_CPP) $(LIBGTEST) $(LIBGTEST_MAIN) $(CPPFLAGS_AFTER)
+
 clean:
 	rm -f $(CLEAN_FILES)
 
 test: $(TEST_MAIN_OUT)
 	./$(TEST_MAIN_OUT) $(GTESTFLAGS)
+
+test-cov: $(TEST_MAIN_OUT_COV)
+	./$(TEST_MAIN_OUT_COV) $(GTESTFLAGS)
 
 cov:
 	gcovr $(GCOVRFLAGS)
