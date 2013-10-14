@@ -30,8 +30,8 @@ script:
   - cd ./test
   - make
   - make test
-env:
-  - ignore=this
+# env:
+#   - ignore=this
 matrix:
   exclude:
     - env: ignore=this
