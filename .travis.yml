@@ -13,9 +13,11 @@ install:
     if [ -n "$PPA" ]; then
       sudo add-apt-repository --yes ${PPA};
     fi
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq ${PACKAGE}
-  - sudo apt-get install -qq libgtest-dev
+  - sudo apt-get -y update -qq
+  - sudo rm `which clang`
+  - sudo rm `which clang++`
+  - sudo apt-get -y install -qq ${PACKAGE}
+  - sudo apt-get -y install -qq libgtest-dev
 before_script:
   - echo check version
   - ${CC} --version
