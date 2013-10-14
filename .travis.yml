@@ -43,7 +43,7 @@ matrix:
     - compiler: clang
       env: REAL_CC=clang-3.3 REAL_CXX=clang++-3.3 PPA=ppa:h-rayflood/llvm         PACKAGE=clang-3.3
     - compiler: clang
-      env: REAL_CC=clang     REAL_CXX=clang++-3.4 PPA=                            PACKAGE=clang-3.4
+      env: REAL_CC=clang     REAL_CXX=clang++     PPA=                            PACKAGE=clang-3.4
     - compiler: gcc
       env: REAL_CC=gcc-4.6   REAL_CXX=g++-4.6     PPA=                            PACKAGE=g++-4.6
     - compiler: gcc
