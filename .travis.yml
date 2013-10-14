@@ -50,6 +50,8 @@ matrix:
     - compiler: gcc
       env: PACKAGE=g++-4.4    REAL_CC=gcc-4.4   REAL_CXX=g++-4.4     PPA=
     - compiler: gcc
+      env: PACKAGE=g++-4.5    REAL_CC=gcc-4.5   REAL_CXX=g++-4.5     PPA=ppa:ubuntu-toolchain-r/test 
+    - compiler: gcc
       env: PACKAGE=g++-4.6    REAL_CC=gcc-4.6   REAL_CXX=g++-4.6     PPA=
     - compiler: gcc
       env: PACKAGE=g++-4.7    REAL_CC=gcc-4.7   REAL_CXX=g++-4.7     PPA=ppa:ubuntu-toolchain-r/test 
