@@ -18,8 +18,8 @@ install:
   - sudo apt-get install -qq libgtest-dev
 before_script:
   - echo check version
-  - $(CC) --version
-  - $(CXX) --version
+  - ${CC} --version
+  - ${CXX} --version
   -
     if [ ${PACKAGE} = clang-3.1 ];
     then
