@@ -1,5 +1,9 @@
 language: cpp
 before_install:
+  - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ saucy main universe"
+  - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ raring main universe"
+  - sudo add-apt-repository -y "deb http://llvm.org/apt/raring/ llvm-toolchain-raring main"
+  - wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
   - export CC=${REAL_CC}
   - export CXX=${REAL_CXX}
 install:
@@ -19,7 +23,7 @@ before_script:
     fi
 script:
   - cd ./test
-  - make -k
+  - make
   - make test
 env:
   - ignore=this
@@ -33,6 +37,8 @@ matrix:
       env: REAL_CC=clang-3.2 REAL_CXX=clang++-3.2 PPA=ppa:h-rayflood/llvm         PACKAGE=clang-3.2
     - compiler: clang
       env: REAL_CC=clang-3.3 REAL_CXX=clang++-3.3 PPA=ppa:h-rayflood/llvm         PACKAGE=clang-3.3
+    - compiler: clang
+      env: REAL_CC=clang-3.4 REAL_CXX=clang++-3.4 PPA=                            PACKAGE=clang-3.4
     - compiler: gcc
       env: REAL_CC=gcc-4.6   REAL_CXX=g++-4.6     PPA=                            PACKAGE=g++-4.6
     - compiler: gcc
