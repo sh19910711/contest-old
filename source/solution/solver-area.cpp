@@ -1,6 +1,7 @@
 class Solver {
 public:
-  void solve( Storages& s ) {
+  const OutputStorage& solve( const InputStorage& in, OutputStorage& out, DataStorage& data ) {
+    return out;
   }
 
 protected:

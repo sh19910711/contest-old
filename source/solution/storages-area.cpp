@@ -1,4 +1,4 @@
-struct InputStroage {
+struct InputStorage {
 };
 
 struct OutputStorage {
@@ -8,7 +8,7 @@ struct DataStorage {
 };
 
 struct Storages {
-  InputStroage  in;
+  InputStorage  in;
   OutputStorage out;
   DataStorage   data;
 };
