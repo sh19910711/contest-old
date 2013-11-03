@@ -13,10 +13,9 @@ public:
 protected:
   virtual bool action() {
     this->init();
-    if ( ! this->input(*this->storages) )
+    if ( ! this->input(this->storages->in) )
       return false;
-    solver.solve(*this->storages);
-    this->output(*this->storages);
+    this->output(solver.solve(this->storages->in, this->storages->out, this->storages->data));
     return true;
   }
 
