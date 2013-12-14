@@ -12,7 +12,6 @@ public:
 
 protected:
   virtual bool action() {
-    this->init();
     if ( ! this->input(this->storages->in) )
       return false;
     this->output(solver.solve(this->storages->in, this->storages->out, this->storages->data));
