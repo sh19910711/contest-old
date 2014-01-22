@@ -1,4 +1,0 @@
-struct InputStorage {
-};
-struct OutputStorage {
-};
