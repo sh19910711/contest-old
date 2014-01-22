@@ -1,3 +1,4 @@
+using namespace std;
 typedef std::istringstream ISS;
 typedef std::ostringstream OSS;
 typedef long long Int;

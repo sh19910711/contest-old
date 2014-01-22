@@ -1,9 +1,59 @@
 language: cpp
-compiler:
-  - g++
-  - clang
+before_install:
+  -
+    if [ ${PACKAGE} = clang-3.4 ];
+    then
+      sudo add-apt-repository -y "deb http://llvm.org/apt/precise/ llvm-toolchain-precise main";
+      wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -;
+    fi
+  - export CC=${REAL_CC}
+  - export CXX=${REAL_CXX}
+install:
+  -
+    if [ -n "$PPA" ]; then
+      sudo add-apt-repository --yes ${PPA};
+    fi
+  - sudo apt-get -y update -qq
+  - sudo rm `which clang`
+  - sudo rm `which clang++`
+  - sudo apt-get -y install -qq ${PACKAGE}
+  - sudo apt-get -y install -qq libgtest-dev
+  - hash -r
+before_script:
+  - echo check version
+  - ${CC} --version
+  - ${CXX} --version
+  -
+    if [ ${PACKAGE} = clang-3.1 ];
+    then
+      wget http://clang.llvm.org/libstdc++4.6-clang11.patch;
+      sudo patch /usr/include/c++/4.6/type_traits < libstdc++4.6-clang11.patch;
+    fi
 script:
   - cd ./test
   - make
   - make test
-  - make clean
+env:
+  - ignore=this
+matrix:
+  exclude:
+    - env: ignore=this
+  include:
+    - compiler: clang
+      env: PACKAGE=clang-3.1  REAL_CC=clang-3.1 REAL_CXX=clang++-3.1 PPA=ppa:h-rayflood/llvm
+    - compiler: clang
+      env: PACKAGE=clang-3.2  REAL_CC=clang-3.2 REAL_CXX=clang++-3.2 PPA=ppa:h-rayflood/llvm
+    - compiler: clang
+      env: PACKAGE=clang-3.3  REAL_CC=clang-3.3 REAL_CXX=clang++-3.3 PPA=ppa:h-rayflood/llvm
+    - compiler: clang
+      env: PACKAGE=clang-3.4  REAL_CC=clang     REAL_CXX=clang++     PPA=
+    - compiler: gcc
+      env: PACKAGE=g++-4.4    REAL_CC=gcc-4.4   REAL_CXX=g++-4.4     PPA=
+    - compiler: gcc
+      env: PACKAGE=g++-4.5    REAL_CC=gcc-4.5   REAL_CXX=g++-4.5     PPA=ppa:ubuntu-toolchain-r/test 
+    - compiler: gcc
+      env: PACKAGE=g++-4.6    REAL_CC=gcc-4.6   REAL_CXX=g++-4.6     PPA=
+    - compiler: gcc
+      env: PACKAGE=g++-4.7    REAL_CC=gcc-4.7   REAL_CXX=g++-4.7     PPA=ppa:ubuntu-toolchain-r/test 
+    - compiler: gcc
+      env: PACKAGE=g++-4.8    REAL_CC=gcc-4.8   REAL_CXX=g++-4.8     PPA=ppa:ubuntu-toolchain-r/test 

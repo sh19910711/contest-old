@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 #include "test_headers.h"
-#include "./breadth_first_search.h"
+#include "../search.h"
 #include "define_test.h"
 
 #include "./codeforces_330D/test_cases.h"
