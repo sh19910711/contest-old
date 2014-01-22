@@ -7,18 +7,8 @@
 // @snip <sh19910711/contest:solution/solver-area.cpp>
 class Solution: public SolutionBase {
 public:
-  Solution() {}
-  Solution(Storages* p): storages(p) {}
-
-protected:
-  virtual bool action() {
-    if ( ! this->input(this->storages->in) )
-      return false;
-    this->output(solver.solve(this->storages->in, this->storages->out, this->storages->data));
-    return true;
+  bool input( InputStorage* in ) {
   }
-
-private:
-  Solver solver;
-  Storages* storages;
+  void output( const OutputStorage* out ) {
+  }
 };

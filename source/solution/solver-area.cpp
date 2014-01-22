@@ -1,9 +1,7 @@
-class Solver {
+class Solver: public SolverInterface {
 public:
-  const OutputStorage& solve( const InputStorage& in, OutputStorage& out, DataStorage& data ) {
+  const OutputStorage* solve( const InputStorage* in, OutputStorage* out ) {
     return out;
   }
-
 protected:
-
 };
