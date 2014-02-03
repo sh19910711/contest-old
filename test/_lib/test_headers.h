@@ -1,4 +1,5 @@
-// @snippet<sh19910711/contest:headers.cpp>
+// @snippet<sh19910711/contest-base:headers.cpp>
+#define __THIS_IS_CPP11__
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -18,3 +19,10 @@
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
+
+#ifdef __THIS_IS_CPP11__
+#include <memory>
+#include <array>
+#endif
+
+
